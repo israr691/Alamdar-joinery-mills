@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alamdar Joinery Mills</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2e3b4e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .info {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.2);
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Alamdar Joinery Mills</h1>
+  <p>Devbugh Kunzer | Near Jamia Masjid Devbugh</p>
+</header>
+
+<div class="container">
+
+  <div class="info">
+    <h2>📞 Contact Us</h2>
+    <p><strong>Phone:</strong> 9906761243, 8491846525</p>
+    <p><strong>Email:</strong> israrfarooq68@gmail.com</p>
+    <a href="mailto:israrfarooq68@gmail.com" style="color: #007bff;">Send Email</a>
+  </div>
+
+  <div class="info">
+    <h2>🛒 Book Your Order</h2>
+    <form onsubmit="submitBooking(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" required></textarea>
+
+      <label for="item">What do you want to order?</label>
+      <select id="item" required>
+        <option value="">Select an item</option>
+        <option value="Windows">Windows</option>
+        <option value="Doors">Doors</option>
+        <option value="Beds">Beds</option>
+        <option value="Wardrobes">Wardrobes</option>
+        <option value="Custom Furniture">Custom Furniture</option>
+      </select>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+    <p id="message" style="color: green;"></p>
+  </div>
+
+  <div class="info">
+    <h2>🖼️ Our Recent Work</h2>
+    <div class="gallery">
+      <img src="image1.jpg" alt="Wood Window Frame">
+      <img src="image2.jpg" alt="Custom Bed">
+      <img src="image3.jpg" alt="Carved Door">
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function submitBooking(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const item = document.getElementById("item").value;
+    const phone = document.getElementById("phone").value;
+
+    const message = `Booking Confirmed!\n\nName: ${name}\nAddress: ${address}\nItem: ${item}\nPhone: ${phone}`;
+    alert(message);
+    document.getElementById("message").innerText = "Thank you! Your booking has been submitted.";
+  }
+</script>
+
+</body>
+</html>
